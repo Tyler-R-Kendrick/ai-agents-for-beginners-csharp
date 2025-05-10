@@ -1,72 +1,178 @@
-[![AI Agents In Production](./images/lesson-10-thumbnail.png)](https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV)
+---
+title: 'Lesson 10: AI Agents in Production'
+subtitle: 'AI Agents for Beginners'
+theme: seriph
+transition: slide-left
+class: text-center
+highlighter: shiki
+lineNumbers: false
+drawings:
+  persist: false
+download: true
+exportFilename: 10-ai-agents-production-slides
+info: |
+  ## AI Agents for Beginners
+  Lesson 10: AI Agents in Production
+  Learn how to plan, deploy, and manage AI agents in a production environment.
+---
 
-> _(Click the image above to view video of this lesson)_
-# AI Agents in Production
+<!-- Original filepath: /workspaces/ai-agents-for-beginners-csharp/10-ai-agents-production/README.md -->
+<!-- Slidev conversion starts here. -->
 
-## Introduction
+<div class="absolute left-0 right-0 top-0 z-0">
+<img src="./images/lesson-10-thumbnail.png" class="w-full h-full object-cover"/>
+</div>
 
-This lesson will cover:
+<div class="absolute bottom-20 left-15 right-15">
+<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
+<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
+<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
+<br/>
+<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
+</div>
 
-- How to plan the deployment of your AI Agent to production effectively.
-- Common mistakes and issues that you may face when deploying your AI Agent to production.
-- How to manage costs while still maintaining the performance of your AI Agent.
+---
+layout: intro
+---
+
+# Lesson 10: AI Agents in Production
+
+Welcome! This lesson covers:
+<v-clicks>
+
+- Effectively planning the deployment of your AI Agent to production.
+- Common mistakes and issues when deploying AI Agents.
+- Managing costs while maintaining AI Agent performance.
+
+</v-clicks>
+
+---
+layout: default
+---
 
 ## Learning Goals
 
-After completing this lesson, you will know how to/understand:
+After this lesson, you will understand:
+<v-clicks>
 
-- Techniques for improving the performance, costs, and effectiveness of a production AI Agent system.
+- Techniques for improving performance, costs, and effectiveness of production AI Agent systems.
 - What and how to evaluate your AI Agents.
 - How to control costs when deploying AI Agents to production.
 
-It is important to deploy AI Agents that are trustworthy. Check out the "Building Trustworthy AI Agents" lesson as well.
+</v-clicks>
+
+**Important Note:** Always aim to deploy trustworthy AI Agents. Refer to the "Building Trustworthy AI Agents" lesson for more details.
+
+---
+layout: section
+---
+
+# Evaluating AI Agents
+
+---
+layout: default
+---
 
 ## Evaluating AI Agents
 
-Before, during, and after deploying AI Agents, having a proper system to evaluate your AI Agents is critical. This will ensure that your system is aligned with you and your users' goals.
+Proper evaluation before, during, and after deployment is critical to ensure your AI Agent system aligns with your and your users' goals.
 
-To evaluate an AI Agent, it is important to have the ability to evaluate not only the agent's output but also the entire system that your AI Agent is operating in. This includes but is not limited to:
+Evaluate not just the agent's output, but the **entire system**, including:
+<v-clicks>
 
 - The initial model request.
-- The agent's ability to identify the intent of the user.
-- The agent's ability to identify the right tool to perform the task.
+- Agent's ability to identify user intent.
+- Agent's ability to identify the right tool.
 - The tool's response to the agent's request.
-- The agent's ability to interpret the tool's response.
-- The user's feedback to the agent's response.
+- Agent's ability to interpret the tool's response.
+- User's feedback to the agent's response.
 
-This allows you to identify areas for improvement in a more modular way. You can then monitor the effect of changes to models, prompts, tools, and other components with better efficiency.
+</v-clicks>
 
-## Common Issues and Potential Solutions with AI Agents
+This modular evaluation helps identify improvement areas and monitor the effect of changes efficiently.
 
-| **Issue**                                      | **Potential Solution**                                                                                                                                                                                                     |
-| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| AI Agent not performing tasks consistently     | - Refine the prompt given to the AI Agent; be clear on objectives.<br>- Identify where dividing the tasks into subtasks and handling them by multiple agents can help.                                                      |
-| AI Agent running into continuous loops         | - Ensure you have clear termination terms and conditions so the Agent knows when to stop the process.<br>- For complex tasks that require reasoning and planning, use a larger model that is specialized for reasoning tasks. |
-| AI Agent tool calls are not performing well    | - Test and validate the tool's output outside of the agent system.<br>- Refine the defined parameters, prompts, and naming of tools.                                                                                        |
-| Multi-Agent system not performing consistently | - Refine prompts given to each agent to ensure they are specific and distinct from one another.<br>- Build a hierarchical system using a "routing" or controller agent to determine which agent is the correct one.         |
+---
+layout: section
+---
 
-## Managing Costs
+# Common Issues and Potential Solutions
 
-Here are some strategies to manage the costs of deploying AI Agents to production:
+---
+layout: default
+---
 
-- **Caching Responses** - Identifying common requests and tasks and providing the responses before they go through your agentic system is a good way to reduce the volume of similar requests. You can even implement a flow to identify how similar a request is to your cached requests using more basic AI models.
+## Common Issues & Potential Solutions
 
-- **Using Smaller Models** - Small Language Models (SLMs) can perform well on certain agentic use-cases and will reduce costs significantly. As mentioned earlier, building an evaluation system to determine and compare performance vs larger models is the best way to understand how well an SLM will perform on your use case.
+| Issue                                          | Potential Solution                                                                                                                                                                                                                            |
+| :--------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Agent not performing tasks consistently**    | <v-clicks itemClass="text-sm"><ul><li>Refine the prompt given to the AI Agent; be clear on objectives.</li><li>Identify where dividing tasks into subtasks and handling them by multiple agents can help.</li></ul></v-clicks> |
+| **Agent running into continuous loops**        | <v-clicks itemClass="text-sm"><ul><li>Ensure clear termination terms and conditions so the Agent knows when to stop.</li><li>For complex reasoning/planning, use a larger model specialized for such tasks.</li></ul></v-clicks> |
+| **Agent tool calls not performing well**       | <v-clicks itemClass="text-sm"><ul><li>Test and validate the tool's output outside the agent system.</li><li>Refine defined parameters, prompts, and naming of tools.</li></ul></v-clicks>                                                              |
+| **Multi-Agent system not performing consistently** | <v-clicks itemClass="text-sm"><ul><li>Refine prompts for each agent to be specific and distinct.</li><li>Build a hierarchical system using a "routing" or controller agent to determine the correct agent for a task.</li></ul></v-clicks> |
 
-- **Using a Router Model** - A similar strategy is to use a diversity of models and sizes. You can use an LLM/SLM or serverless function to route requests based on complexity to the best fit models. This will also help reduce costs while also ensuring performance on the right tasks.
+---
+layout: section
+---
 
-## Congratulations
+# Managing Costs
 
-This is currently the last lesson of "AI Agents for Beginners".
+---
+layout: default
+---
 
-We plan to continue to add lessons based on feedback and changes in this ever growing industry so stop by again in the near future.
+## Managing Costs in Production
 
-If you want to continue your learning and building with AI Agents, join the <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a>.
+Strategies to manage AI Agent deployment costs:
 
-We host workshops, community roundtables and "ask me anything" sessions there.
+<v-clicks>
 
-We also have a Learn collection of additional materials that can help you start building AI Agents in production.
+- **Caching Responses:**
+  - Identify common requests/tasks and provide cached responses to reduce volume.
+  - Can use simpler models to check similarity to cached requests.
+
+- **Using Smaller Models (SLMs):**
+  - SLMs can perform well on certain use-cases and significantly reduce costs.
+  - Use an evaluation system to compare SLM performance vs. larger models for your specific use case.
+
+- **Using a Router Model:**
+  - Employ a diversity of model sizes.
+  - Use an LLM/SLM or serverless function to route requests based on complexity to the best-fit (and cost-appropriate) model.
+
+</v-clicks>
+
+---
+layout: outro
+---
+
+# Congratulations!
+
+This is currently the final lesson of "AI Agents for Beginners."
+
+<v-clicks>
+
+- We plan to add more lessons based on feedback and industry changes, so check back soon!
+- To continue learning and building with AI Agents, join the <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a>.
+  - We host workshops, community roundtables, and "ask me anything" sessions there.
+- Check out our <a href="https://learn.microsoft.com/collections/y52k9zx8q3p1qz?WT.mc_id=academic-105485-koreyst" target="_blank">Learn collection</a> for additional materials on building AI Agents in production.
+
+</v-clicks>
+
+---
+layout: default
+---
 
 ## Previous Lesson
 
-[Metacognition Design Pattern](../09-metacognition/README.md)
+[Lesson 9: Metacognition & Self-Correction](../09-metacognition/README.md)
+
+[Return to Main Course Page](https://github.com/microsoft/ai-agents-for-beginners)
+
+---
+class: end
+---
+
+## Thank You!
+
+We hope you enjoyed this course on AI Agents!
+
+<!-- This is the end of the Slidev presentation for Lesson 10 -->

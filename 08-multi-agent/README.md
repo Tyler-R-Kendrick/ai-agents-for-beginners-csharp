@@ -1,186 +1,331 @@
-[![Multi-Agent Design](./images/lesson-8-thumbnail.png)](https://youtu.be/V6HpE9hZEx0?si=A7K44uMCqgvLQVCa)
+---
+title: 'Lesson 8: Multi-Agent Systems'
+subtitle: 'AI Agents for Beginners'
+theme: seriph
+transition: slide-left
+class: text-center
+highlighter: shiki
+lineNumbers: false
+drawings:
+  persist: false
+download: true
+exportFilename: 08-multi-agent-slides
+info: |
+  ## AI Agents for Beginners
+  Lesson 8: Multi-Agent Systems
+  Learn about creating systems with multiple AI agents that can collaborate or delegate tasks.
+---
 
-> _(Click the image above to view video of this lesson)_
+<!-- Original filepath: /workspaces/ai-agents-for-beginners-csharp/08-multi-agent/README.md -->
+<!-- Slidev conversion starts here. -->
 
-# Multi-agent design patterns
+<div class="absolute left-0 right-0 top-0 z-0">
+<img src="./images/lesson-8-thumbnail.png" class="w-full h-full object-cover"/>
+</div>
 
-As soon as you start working on a project that involves multiple agents, you will need to consider the multi-agent design pattern. However, it might not be immediately clear when to switch to multi-agents and what the advantages are.
+<div class="absolute bottom-20 left-15 right-15">
+<span class="font-bold text-5xl text-white">Lesson 8: Multi-Agent Systems</span>
+<p class="text-2xl text-white mt-4">Learn about creating systems with multiple AI agents that can collaborate or delegate tasks.</p>
+<a href="https://aka.ms/ai-agents-for-beginners/watch/08" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
+<br/>
+<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
+</div>
 
-## Introduction
+---
+layout: intro
+---
 
-In this lesson, we're looking to answer the following questions:
+# Lesson 8: Multi-Agent Systems
 
-- What are the scenarios where multi-agents are applicable to?
-- What are the advantages of using multi-agents over just one singular agent doing multiple tasks?
-- What are the building blocks of implementing the multi-agent design pattern?
-- How do we have visibility to how the multiple agents are interacting with each other?
+Welcome to Lesson 8! In this lesson, we'll explore the fascinating world of **Multi-Agent Systems**.
 
-## Learning Goals
+<v-clicks>
 
-After this lesson, you should be able to:
+- We'll learn how to create systems where multiple AI agents can collaborate, delegate tasks, and work together to achieve common goals.
+- We'll also look at different patterns and architectures for designing effective multi-agent systems.
 
-- Identify scenarios where multi-agents are applicable
-- Recognize the advantages of using multi-agents over a singular agent.
-- Comprehend the building blocks of implementing the multi-agent design pattern.
+</v-clicks>
 
-What's the bigger picture?
+---
+layout: default
+---
 
-*Multi agents are a design pattern that allows multiple agents to work together to achieve a common goal*.
+## What are Multi-Agent Systems?
 
-This pattern is widely used in various fields, including robotics, autonomous systems, and distributed computing.
+A Multi-Agent System (MAS) is a system composed of multiple interacting intelligent agents. These agents can be:
+<v-clicks>
 
-## Scenarios Where Multi-Agents Are Applicable
+- **Cooperative:** Working together towards a shared goal.
+- **Competitive:** Pursuing individual goals that may conflict.
+- **Self-interested:** Focused on their own objectives.
 
-So what scenarios are a good use case for using multi-agents? The answer is that there are many scenarios where employing multiple agents is beneficial especially in the following cases:
+</v-clicks>
 
-- **Large workloads**: Large workloads can be divided into smaller tasks and assigned to different agents, allowing for parallel processing and faster completion. An example of this is in the case of a large data processing task.
-- **Complex tasks**: Complex tasks, like large workloads, can be broken down into smaller subtasks and assigned to different agents, each specializing in a specific aspect of the task. A good example of this is in the case of autonomous vehicles where different agents manage navigation, obstacle detection, and communication with other vehicles.
-- **Diverse expertise**: Different agents can have diverse expertise, allowing them to handle different aspects of a task more effectively than a single agent. For this case, a good example is in the case of healthcare where agents can manage diagnostics, treatment plans, and patient monitoring.
+In this lesson, we'll focus on cooperative multi-agent systems.
 
-## Advantages of Using Multi-Agents Over a Singular Agent
+---
+layout: two-cols
+---
 
-A single agent system could work well for simple tasks, but for more complex tasks, using multiple agents can provide several advantages:
+## Why Use Multi-Agent Systems?
 
-- **Specialization**: Each agent can be specialized for a specific task. Lack of specialization in a single agent means you have an agent that can do everything but might get confused on what to do when faced with a complex task. It might for example end up doing a task that it is not best suited for.
-- **Scalability**: It is easier to scale systems by adding more agents rather than overloading a single agent.
-- **Fault Tolerance**: If one agent fails, others can continue functioning, ensuring system reliability.
+<v-clicks>
 
-Let's take an example, let's book a trip for a user. A single agent system would have to handle all aspects of the trip booking process, from finding flights to booking hotels and rental cars. To achieve this with a single agent, the agent would need to have tools for handling all these tasks. This could lead to a complex and monolithic system that is difficult to maintain and scale. A multi-agent system, on the other hand, could have different agents specialized in finding flights, booking hotels, and rental cars. This would make the system more modular, easier to maintain, and scalable.
+- **Modularity:** Break down complex problems into smaller, manageable tasks for individual agents.
+- **Scalability:** Easily add more agents to handle increased workload or complexity.
+- **Robustness:** The system can continue to function even if some agents fail.
+- **Specialization:** Different agents can be designed with specific expertise.
+- **Parallelism:** Agents can work on different tasks concurrently.
 
-Compare this to a travel bureau run as a mom-and-pop store versus a travel bureau run as a franchise. The mom-and-pop store would have a single agent handling all aspects of the trip booking process, while the franchise would have different agents handling different aspects of the trip booking process.
+</v-clicks>
 
-## Building Blocks of Implementing the Multi-Agent Design Pattern
+::right::
 
-Before you can implement the multi-agent design pattern, you need to understand the building blocks that make up the pattern.
+<img src="./images/multi-agent-collaboration.png" alt="Multi-Agent Collaboration" class="rounded-lg shadow-lg" style="max-height: 400px; margin: auto;"/>
+<p class="text-xs text-center mt-2">Conceptual representation of agents collaborating.</p>
 
-Let's make this more concrete by again looking at the example of booking a trip for a user. In this case, the building blocks would include:
+---
+layout: default
+---
 
-- **Agent Communication**: Agents for finding flights, booking hotels, and rental cars need to communicate and share information about the user's preferences and constraints. You need to decide on the protocols and methods for this communication. What this means concretely is that the agent for finding flights needs to communicate with the agent for booking hotels to ensure that the hotel is booked for the same dates as the flight. That means that the agents need to share information about the user's travel dates, meaning that you need to decide *which agents are sharing info and how they are sharing info*.
-- **Coordination Mechanisms**: Agents need to coordinate their actions to ensure that the user's preferences and constraints are met. A user preference could be that they want a hotel close to the airport whereas a constraint could be that rental cars are only available at the airport. This means that the agent for booking hotels needs to coordinate with the agent for booking rental cars to ensure that the user's preferences and constraints are met. This means that you need to decide *how the agents are coordinating their actions*.
-- **Agent Architecture**: Agents need to have the internal structure to make decisions and learn from their interactions with the user. This means that the agent for finding flights needs to have the internal structure to make decisions about which flights to recommend to the user. This means that you need to decide *how the agents are making decisions and learning from their interactions with the user*. Examples of how an agent learns and improves could be that the agent for finding flights could use a machine learning model to recommend flights to the user based on their past preferences.
-- **Visibility into Multi-Agent Interactions**: You need to have visibility into how the multiple agents are interacting with each other. This means that you need to have tools and techniques for tracking agent activities and interactions. This could be in the form of logging and monitoring tools, visualization tools, and performance metrics.
-- **Multi-Agent Patterns**: There are different patterns for implementing multi-agent systems, such as centralized, decentralized, and hybrid architectures. You need to decide on the pattern that best fits your use case.
-- **Human in the loop**: In most cases, you will have a human in the loop and you need to instruct the agents when to ask for human intervention. This could be in the form of a user asking for a specific hotel or flight that the agents have not recommended or asking for confirmation before booking a flight or hotel.
+## Key Concepts in Multi-Agent Systems
 
-## Visibility into Multi-Agent Interactions
+<v-clicks>
 
-It's important that you have visibility into how the multiple agents are interacting with each other. This visibility is essential for debugging, optimizing, and ensuring the overall system's effectiveness. To achieve this, you need to have tools and techniques for tracking agent activities and interactions. This could be in the form of logging and monitoring tools, visualization tools, and performance metrics.
+- **Agent Communication Language (ACL):** A standardized language for agents to exchange messages (e.g., FIPA ACL, KQML).
+- **Ontology:** A shared understanding of the domain, defining terms and relationships.
+- **Coordination Mechanisms:** How agents synchronize their actions and avoid conflicts (e.g., negotiation, voting, auction).
+- **Task Allocation:** How tasks are distributed among agents.
+- **Team Formation:** How groups of agents are formed to achieve specific goals.
 
-For example, in the case of booking a trip for a user, you could have a dashboard that shows the status of each agent, the user's preferences and constraints, and the interactions between agents. This dashboard could show the user's travel dates, the flights recommended by the flight agent, the hotels recommended by the hotel agent, and the rental cars recommended by the rental car agent. This would give you a clear view of how the agents are interacting with each other and whether the user's preferences and constraints are being met.
+</v-clicks>
 
-Let's look at each of these aspects more in detail.
+---
+layout: section
+---
 
-- **Logging and Monitoring Tools**: You want to have logging done for each action taken by an agent. A log entry could store information on the agent that took the action, the action taken, the time the action was taken, and the outcome of the action. This information can then be used for debugging, optimizing and more.
+# Designing Multi-Agent Systems
 
-- **Visualization Tools**: Visualization tools can help you see the interactions between agents in a more intuitive way. For example, you could have a graph that shows the flow of information between agents. This could help you identify bottlenecks, inefficiencies, and other issues in the system.
+---
+layout: default
+---
 
-- **Performance Metrics**: Performance metrics can help you track the effectiveness of the multi-agent system. For example, you could track the time taken to complete a task, the number of tasks completed per unit of time, and the accuracy of the recommendations made by the agents. This information can help you identify areas for improvement and optimize the system.
+## Common Architectures
 
-## Multi-Agent Patterns
+There are several common architectures for multi-agent systems:
 
-Let's dive into some concrete patterns we can use to create multi-agent apps. Here are some interesting patterns worth considering:
+<v-clicks>
 
-### Group chat
+1.  **Hierarchical:** Agents are organized in a tree-like structure with clear lines of command.
+    *   *Example:* A manager agent delegates tasks to worker agents.
+2.  **Federated:** A collection of autonomous systems that collaborate.
+    *   *Example:* Different organizations' agent systems sharing information.
+3.  **Blackboard:** Agents share information through a common data repository (the blackboard).
+    *   *Example:* Agents read and write partial solutions to a shared space.
+4.  **Peer-to-Peer:** Agents interact directly with each other without a central controller.
+    *   *Example:* A network of agents negotiating resource allocation.
 
-This pattern is useful when you want to create a group chat application where multiple agents can communicate with each other. Typical use cases for this pattern include team collaboration, customer support, and social networking.
+</v-clicks>
 
-In this pattern, each agent represents a user in the group chat, and messages are exchanged between agents using a messaging protocol. The agents can send messages to the group chat, receive messages from the group chat, and respond to messages from other agents.
+---
+layout: image-right
+image: ./images/hierarchical-architecture.png
+---
 
-This pattern can be implemented using a centralized architecture where all messages are routed through a central server, or a decentralized architecture where messages are exchanged directly.
+## Hierarchical Architecture
 
-![Group chat](./images/multi-agent-group-chat.png)
+In a hierarchical architecture:
+<v-clicks>
 
-### Hand-off
+- A "manager" or "coordinator" agent sits at the top.
+- This agent breaks down a complex goal into sub-tasks.
+- Sub-tasks are delegated to specialized "worker" agents.
+- Worker agents might further delegate to other agents or execute the task.
+- Communication typically flows up and down the hierarchy.
 
-This pattern is useful when you want to create an application where multiple agents can hand off tasks to each other.
+</v-clicks>
 
-Typical use cases for this pattern include customer support, task management, and workflow automation.
+**Pros:** Clear control flow, easier to manage.
+**Cons:** Single point of failure at higher levels, can be less flexible.
 
-In this pattern, each agent represents a task or a step in a workflow, and agents can hand off tasks to other agents based on predefined rules.
+*(Image: A diagram showing a manager agent connected to several worker agents below it.)*
 
-![Hand off](./images/multi-agent-hand-off.png)
+---
+layout: default
+---
 
-### Collaborative filtering
+## Example: Travel Planning Multi-Agent System
 
-This pattern is useful when you want to create an application where multiple agents can collaborate to make recommendations to users.
+Let's consider a travel planning system with multiple agents:
 
-Why you would want multiple agents to collaborate is because each agent can have different expertise and can contribute to the recommendation process in different ways.
+<v-clicks>
 
-Let's take an example where a user wants a recommendation on the best stock to buy on the stock market.
+- **User Interface Agent:** Interacts with the user to get travel preferences (destination, dates, budget).
+- **Flight Booking Agent:** Searches for and books flights.
+- **Hotel Booking Agent:** Finds and reserves accommodations.
+- **Activity Planning Agent:** Suggests and books local tours and activities.
+- **Coordinator Agent:** Receives user request from UI agent, delegates tasks to specialized agents, and aggregates results.
 
-- **Industry expert**:. One agent could be an expert in a specific industry.
-- **Technical analysis**: Another agent could be an expert in technical analysis.
-- **Fundamental analysis**: and another agent could be an expert in fundamental analysis. By collaborating, these agents can provide a more comprehensive recommendation to the user.
+</v-clicks>
 
-![Recommendation](./images/multi-agent-filtering.png)
+This system could use a hierarchical or blackboard architecture.
 
-## Scenario: Refund process
+---
+layout: section
+---
 
-Consider a scenario where a customer is trying to get a refund for a product, there can be quite a few agents involved in this process but let's divide it up between agents specific for this process and general agents that can be used in other processes.
+# Implementing a Multi-Agent System with Semantic Kernel
 
-**Agents specific for the refund process**:
+---
+layout: default
+---
 
-Following are some agents that could be involved in the refund process:
+## Using Semantic Kernel for Multi-Agent Systems
 
-- **Customer agent**: This agent represents the customer and is responsible for initiating the refund process.
-- **Seller agent**: This agent represents the seller and is responsible for processing the refund.
-- **Payment agent**: This agent represents the payment process and is responsible for refunding the customer's payment.
-- **Resolution agent**: This agent represents the resolution process and is responsible for resolving any issues that arise during the refund process.
-- **Compliance agent**: This agent represents the compliance process and is responsible for ensuring that the refund process complies with regulations and policies.
+Semantic Kernel can be used to build individual agents, and then you can orchestrate their interactions.
 
-**General agents**:
+<v-clicks>
 
-These agents can be used by other parts of your business.
+- Each agent can be a `Kernel` instance with its own set of plugins (skills) and memory.
+- You can define functions for inter-agent communication.
+- A "main" orchestrator or another agent can manage the flow of information and tasks between agents.
 
-- **Shipping agent**: This agent represents the shipping process and is responsible for shipping the product back to the seller. This agent can be used both for the refund process and for general shipping of a product via a purchase for example.
-- **Feedback agent**: This agent represents the feedback process and is responsible for collecting feedback from the customer. Feedback could be had at any time and not just during the refund process.
-- **Escalation agent**: This agent represents the escalation process and is responsible for escalating issues to a higher level of support. You can use this type of agent for any process where you need to escalate an issue.
-- **Notification agent**: This agent represents the notification process and is responsible for sending notifications to the customer at various stages of the refund process.
-- **Analytics agent**: This agent represents the analytics process and is responsible for analyzing data related to the refund process.
-- **Audit agent**: This agent represents the audit process and is responsible for auditing the refund process to ensure that it is being carried out correctly.
-- **Reporting agent**: This agent represents the reporting process and is responsible for generating reports on the refund process.
-- **Knowledge agent**: This agent represents the knowledge process and is responsible for maintaining a knowledge base of information related to the refund process. This agent could be knowledgeable both on refunds and other parts of your business.
-- **Security agent**: This agent represents the security process and is responsible for ensuring the security of the refund process.
-- **Quality agent**: This agent represents the quality process and is responsible for ensuring the quality of the refund process.
+</v-clicks>
 
-There's quite a few agents listed previously both for the specific refund process but also for the general agents that can be used in other parts of your business. Hopefully this gives you an idea on how you can decide on which agents to use in your multi-agent system.
+Let's look at a simplified example.
 
-## Assignment
+---
+layout: default
+---
 
-Design a multi-agent system for a customer support process. Identify the agents involved in the process, their roles and responsibilities, and how they interact with each other. Consider both agents specific to the customer support process and general agents that can be used in other parts of your business.
+## Example Scenario: Research and Summarize
 
-> Have a think before you read the following solution, you may need more agents than you think.
+**Goal:** Research a topic and provide a summary.
 
-> TIP: Think about the different stages of the customer support process and also consider agents needed for any system.
+**Agents:**
+<v-clicks>
 
-## Solution
+1.  **Research Agent:**
+    *   Skill: Search the web for information on a given topic.
+    *   Input: Topic
+    *   Output: List of relevant articles/sources.
+2.  **Summarization Agent:**
+    *   Skill: Summarize a given text.
+    *   Input: Text (or list of texts)
+    *   Output: Concise summary.
+3.  **Orchestrator Agent (or main application logic):**
+    *   Takes the user's topic.
+    *   Invokes the Research Agent.
+    *   Passes the research results to the Summarization Agent.
+    *   Presents the final summary to the user.
 
-[Solution](./solution/solution.md)
+</v-clicks>
 
-## Knowledge checks
+---
+layout: default
+---
 
-Question: When should you consider using multi-agents?
+## Code Snippet: Conceptual Orchestration
 
-- [ ] A1: When you have a small workload and a simple task.
-- [ ] A2: When you have a large workload
-- [ ] A3: When you have a simple task.
+The following C# snippet illustrates the conceptual flow.
+*(Note: This is a simplified representation. Actual implementation would involve more detailed Semantic Kernel setup for each agent.)*
 
-[Solution quiz](./solution/solution-quiz.md)
+```csharp
+// Conceptual C# Code for Multi-Agent Orchestration
+// (Full code in the lesson's code_samples directory)
 
-## Summary
+public class Orchestrator
+{
+    private ResearchAgent researchAgent;
+    private SummarizationAgent summarizationAgent;
 
-In this lesson, we've looked at the multi-agent design pattern, including the scenarios where multi-agents are applicable, the advantages of using multi-agents over a singular agent, the building blocks of implementing the multi-agent design pattern, and how to have visibility into how the multiple agents are interacting with each other.
+    public Orchestrator()
+    {
+        // Initialize agents (each with their own Kernel, plugins, etc.)
+        // this.researchAgent = new ResearchAgent(...);
+        // this.summarizationAgent = new SummarizationAgent(...);
+    }
 
-## Additional resources
+    public async Task<string> ResearchAndSummarizeTopic(string topic)
+    {
+        // 1. Research Agent gathers information
+        // var researchResults = await this.researchAgent.Search(topic);
 
-- <a href="https://microsoft.github.io/autogen/stable/user-guide/core-user-guide/design-patterns/intro.html" target="_blank">AutoGen design patterns</a>
-- <a href="https://www.analyticsvidhya.com/blog/2024/10/agentic-design-patterns/" target="_blank">Agentic design patterns</a>
+        // 2. Summarization Agent processes the results
+        // var summary = await this.summarizationAgent.Summarize(researchResults);
+        
+        // return summary;
+        Console.WriteLine($"Orchestrator: Researching and summarizing '{topic}'.");
+        Console.WriteLine("Orchestrator: Invoking Research Agent...");
+        // Simulate research agent's work
+        var researchResults = $"Article 1 about {topic}, Article 2 about {topic}, Data about {topic}."; 
+        Console.WriteLine($"Research Agent: Found: {researchResults}");
 
+        Console.WriteLine("Orchestrator: Invoking Summarization Agent...");
+        // Simulate summarization agent's work
+        var summary = $"This is a concise summary about {topic} based on the research.";
+        Console.WriteLine($"Summarization Agent: Summary: {summary}");
 
-## Previous Lesson
+        return summary;
+    }
+}
 
-[Planning Design](../07-planning-design/README.md)
+// To run this:
+// var orchestrator = new Orchestrator();
+// string topic = "the future of AI";
+// string summary = await orchestrator.ResearchAndSummarizeTopic(topic);
+// Console.WriteLine($"
+Final Summary for '{topic}':
+{summary}");
+```
+<br/>
+For the complete, runnable code, please refer to the `code_samples` directory for this lesson in the main repository.
 
-## Next Lesson
+---
+layout: default
+---
 
-[Metacognition in AI Agents](../09-metacognition/README.md)
+## Challenges in Multi-Agent Systems
+
+<v-clicks>
+
+- **Communication Overhead:** Agents need to exchange a lot of messages.
+- **Credit Assignment:** Determining which agent contributed to a success or failure.
+- **Maintaining Coherence:** Ensuring agents work towards a common goal without conflicting actions.
+- **Scalability:** Managing a large number of agents can be complex.
+- **Security and Trust:** Ensuring agents are trustworthy and communication is secure.
+
+</v-clicks>
+
+---
+layout: outro
+---
+
+# Next Steps
+
+Congratulations on completing Lesson 8!
+
+<v-clicks>
+
+- You've learned about the fundamentals of multi-agent systems, their benefits, common architectures, and how you might approach building them using tools like Semantic Kernel.
+- Explore the `code_samples` for this lesson to see a more concrete, albeit simplified, implementation.
+- Think about how you could apply multi-agent concepts to problems you're interested in solving.
+
+</v-clicks>
+
+In the next lesson, we'll dive into **Metacognition and Self-Correction in AI Agents**.
+
+[Proceed to Lesson 9: Metacognition](../09-metacognition/README.md)
+
+[Return to Main Course Page](https://github.com/microsoft/ai-agents-for-beginners)
+
+---
+class: end
+---
+
+## Thank You!
+
+Connect with the community and keep learning.
+
+<!-- Add relevant links, e.g., to community forums, documentation, etc. -->
+<!-- This is the end of the Slidev presentation for Lesson 8 -->
