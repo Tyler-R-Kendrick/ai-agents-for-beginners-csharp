@@ -13,16 +13,8 @@ exportFilename: '01-intro-to-ai-agents-slides'
 info: |
   ## Introduction to AI Agents and Agent Use Cases
   Welcome to the "AI Agents for Beginners" course! This lesson covers the fundamentals of AI Agents.
----
-<!--
-Original filepath: /workspaces/ai-agents-for-beginners-csharp/01-intro-to-ai-agents/README.md
-Slidev conversion starts here.
--->
-
----
 layout: cover
 background: './images/lesson-1-thumbnail.png'
-class: text-center
 ---
 
 # Introduction to AI Agents and Agent Use Cases
@@ -279,7 +271,7 @@ Agentic Frameworks allow developers to implement agentic patterns through code.
 </v-clicks>
 
 ---
-layout: section
+layout: end
 ---
 
 # End of Lesson 1

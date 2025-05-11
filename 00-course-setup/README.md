@@ -13,10 +13,8 @@ exportFilename: '00-course-setup-slides'
 info: |
   ## Course Setup
   This lesson covers how to run the code samples of this course.
----
-
----
 layout: intro
+hideInToc: true
 ---
 
 # Course Setup
@@ -24,6 +22,17 @@ layout: intro
 ## Introduction
 
 This lesson will cover how to run the code samples of this course.
+
+---
+layout: two-cols
+hideInToc: true
+---
+
+# Table of contents
+
+::right::
+
+<Toc/>
 
 ---
 layout: default
@@ -48,7 +57,6 @@ layout: default
 This course offers a series of Jupyter Notebooks that you can run with to get hands-on experience building AI Agents.
 
 The code samples use either:
-
 
 **Requires GitHub Account - Free**:
 1. Semantic Kernel Agent Framework + GitHub Models Marketplace. Labeled as (semantic-kernel.ipynb)
@@ -92,6 +100,10 @@ layout: default
 
 # Set Up for Samples using GitHub Models
 
+<v-switch>
+
+<template #1>
+
 ## Step 1: Retrieve Your GitHub Personal Access Token (PAT)
 
 Currently, this course uses the Github Models Marketplace to offer free access to Large Language Models (LLMs) that will be used to create AI Agents.
@@ -104,17 +116,19 @@ Select the `Fine-grained tokens` option on the left side of your screen.
 
 Then select `Generate new token`.
 
+</template>
+
+<template #2>
+
 ![Generate Token](./images/generate-token.png)
 
 You will be prompted to enter a name for your token, select the expiration date (Recommended: 30 Days), and select the scopes for your token (Public Repositories).
 
 Copy your new token that you have just created. You will now add this to your `.env` file included in this course.
 
----
-layout: default
----
+</template>
 
-# Set Up for Samples using GitHub Models (Continued)
+<template #3>
 
 ## Step 2: Create Your `.env` File
 
@@ -130,11 +144,19 @@ With your token copied, open the `.env` file in your favorite text editor and pa
 
 You should now be able to run the code samples of this course.
 
+</template>
+
+</v-switch>
+
 ---
 layout: default
 ---
 
 # Set Up for Samples using Azure AI Foundry and Azure AI Agent Service
+
+<v-switch>
+
+<template #1>
 
 ## Step 1: Retrieve Your Azure Project Connection String
 
@@ -146,11 +168,9 @@ This can be done by going to the **Overview** page of your project in the Azure 
 
 ![Project Connection String](./images/project-connection-string.png)
 
----
-layout: default
----
+</template>
 
-# Set Up for Samples using Azure AI Foundry (Continued)
+<template #2>
 
 ## Step 2: Create Your `.env` File
 
@@ -172,8 +192,12 @@ Next, open a terminal and run `az login --use-device-code` to sign in to your Az
 
 Once you've logged in, select your subscription in the terminal.
 
+</template>
+
+</v-switch>
+
 ---
-layout: default
+layout: two-cols
 ---
 
 # Additional Environment Variables
@@ -183,30 +207,36 @@ For the Agentic RAG Lesson - Lesson 5 - there are samples that use Azure Search 
 
 If you want to run these samples, you will need to add the following environment variables to your `.env` file:
 
-<v-clicks>
+::right::
+
+<v-switch>
+
+<template #1>
 
 ### Overview Page (Project)
 - `AZURE_SUBSCRIPTION_ID` - Check **Project details** on the **Overview** page of your project.
 - `AZURE_AI_PROJECT_NAME` - Look at the top of the **Overview** page for your project.
 - `AZURE_OPENAI_SERVICE` - Find this in the **Included capabilities** tab for **Azure OpenAI Service** on the **Overview** page.
 
+</template>
+
+<template #2>
+
 ### Management Center
 - `AZURE_OPENAI_RESOURCE_GROUP` - Go to **Project properties** on the **Overview** page of the **Management Center**.
-- `GLOBAL_LLM_SERVICE` - Under **Connected resources**, find the **Azure AI Services** connection name. If not listed, check the **Azure portal** under your resource group for the AI Services resource name.
+- `GLOBAL_LLM_SERVICE` - Under **Connected resources**, find the **Azure AI Services** connection name. If not listed, check the **Azure portal** under your resource group for the AI Services resource.
 
-</v-clicks>
+</template>
 
----
-layout: default
----
-
-# Additional Environment Variables (Continued)
-
-<v-clicks>
+<template #3>
 
 ### Models + Endpoints Page
 - `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Select your embedding model (e.g., `text-embedding-ada-002`) and note the **Deployment name** from the model details.
 - `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Select your chat model (e.g., `gpt-4o-mini`) and note the **Deployment name** from the model details.
+
+</template>
+
+<template #4>
 
 ### Azure Portal
 - `AZURE_OPENAI_ENDPOINT` - Look for **Azure AI services**, click on it, then go to **Resource Management**, **Keys and Endpoint**, scroll down to the "Azure OpenAI endpoints", and copy the one that says "Language APIs".
@@ -214,18 +244,16 @@ layout: default
 - `AZURE_SEARCH_SERVICE_ENDPOINT` - Find your **Azure AI Search** resource, click it, and see **Overview**.
 - `AZURE_SEARCH_API_KEY` - Then go to **Settings** and then **Keys** to copy the primary or secondary admin key.
 
-</v-clicks>
+</template>
 
----
-layout: default
----
-
-# Additional Environment Variables (Concluded)
-
-<v-clicks>
+<template #5>
 
 ### External Webpage
 - `AZURE_OPENAI_API_VERSION` - Visit the [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) page under **Latest GA API release**.
+
+</template>
+
+<template #6>
 
 ### Setup keyless authentication
 Rather than hardcode your credentials, we'll use a keyless connection with Azure OpenAI. To do so, we'll import `DefaultAzureCredential` and later call the `DefaultAzureCredential` function to get the credential.
@@ -234,10 +262,12 @@ Rather than hardcode your credentials, we'll use a keyless connection with Azure
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 ```
 
-</v-clicks>
+</template>
+
+</v-switch>
 
 ---
-layout: default
+layout: statement
 ---
 
 # Stuck Somewhere?
@@ -245,7 +275,7 @@ layout: default
 If you have any issues running this setup, hop into our <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> or <a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">create an issue</a>.
 
 ---
-layout: section
+layout: end
 ---
 
 # Next Lesson
