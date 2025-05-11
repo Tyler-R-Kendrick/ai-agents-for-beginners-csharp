@@ -15,11 +15,6 @@ info: |
   This lesson covers how to run the code samples of this course.
 ---
 
-<!--
-Original filepath: /workspaces/ai-agents-for-beginners-csharp/00-course-setup/README.md
-Slidev conversion starts here.
--->
-
 ---
 layout: intro
 ---
@@ -54,7 +49,6 @@ This course offers a series of Jupyter Notebooks that you can run with to get ha
 
 The code samples use either:
 
-<v-clicks>
 
 **Requires GitHub Account - Free**:
 1. Semantic Kernel Agent Framework + GitHub Models Marketplace. Labeled as (semantic-kernel.ipynb)
@@ -63,8 +57,6 @@ The code samples use either:
 
 **Requires Azure Subscription**:
 1.  Azure AI Foundry + Azure AI Agent Service. Labeled as (azureaiagent.ipynb)
-
-</v-clicks>
 
 We encourage you to try out all three types of examples to see which one works best for you.
 
@@ -76,6 +68,10 @@ layout: default
 
 # Requirements
 
+We have included a `requirements.txt` file in the root of this repository that contains all the required Python packages to run the code samples.
+
+You can install them by running the following command in your terminal at the roof of the repository:
+
 <v-clicks>
 
 - Python 3.12+
@@ -84,10 +80,6 @@ layout: default
 - Azure AI Foundry Account - For Access to the Azure AI Agent Service
 
 </v-clicks>
-
-We have included a `requirements.txt` file in the root of this repository that contains all the required Python packages to run the code samples.
-
-You can install them by running the following command in your terminal at the roof of the repository:
 
 ```bash
 pip install -r requirements.txt

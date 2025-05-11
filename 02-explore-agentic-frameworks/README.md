@@ -10,19 +10,20 @@ drawings:
   persist: false
 download: true
 exportFilename: '02-explore-agentic-frameworks-slides'
-info: |
-  ## Explore AI Agent Frameworks
-  This lesson explores different AI Agent Frameworks like AutoGen, Semantic Kernel, and Azure AI Agent Service.
 ---
-<!--
-Original filepath: /workspaces/ai-agents-for-beginners-csharp/02-explore-agentic-frameworks/README.md
-Slidev conversion starts here.
--->
+
 
 ---
 layout: cover
 background: ./images/lesson-2-thumbnail.png
 class: text-center
+---
+
+# Explore AI Agent Frameworks
+  This lesson explores different AI Agent Frameworks like AutoGen, Semantic Kernel, and Azure AI Agent Service.
+
+---
+layout: intro
 ---
 
 # Explore AI Agent Frameworks

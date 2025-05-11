@@ -21,21 +21,21 @@ Slidev conversion starts here.
 
 ---
 layout: cover
-background: ./images/lesson-1-thumbnail.png
+background: './images/lesson-1-thumbnail.png'
 class: text-center
 ---
 
 # Introduction to AI Agents and Agent Use Cases
 ## AI Agents for Beginners - Lesson 1
 
-<div class="abs-br m-6 flex gap-2">
-  <a href="https://youtu.be/3zgm60bXmQk?si=QA4CW2-cmul5kk3D" target="_blank" alt="View video of this lesson"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-video />
-  </a>
-</div>
+---
+class: p-0 # Add this line to remove slide padding
+---
+
+<Youtube id="3zgm60bXmQk" class="absolute inset-0 w-full h-full" />
 
 > _(Click the video icon above to view video of this lesson)_
+
 
 ---
 layout: intro
@@ -86,7 +86,7 @@ layout: default
 
 AI Agents are **systems** that enable **Large Language Models (LLMs)** to **perform actions** by extending their capabilities by giving LLMs **access to tools** and **knowledge**.
 
-Let's break this definition into smaller parts:
+Let's break this definition into smaller parts...
 
 ---
 layout: two-cols
@@ -98,17 +98,19 @@ layout: two-cols
 **System** - It's important to think about agents not as just a single component but as a system of many components. At the basic level, the components of an AI Agent are:
 
 ::right::
+<v-clicks>
 
 - **Environment** - The defined space where the AI Agent is operating.
   - _Example: Travel booking system for a travel AI Agent._
 - **Sensors** - Gather and interpret information about the current state of the environment.
   - _Example: Hotel availability or flight prices from the travel booking system._
 - **Actuators** - Perform actions to change the environment based on the current state and task.
-  - _Example: Booking an available room for the user._
+  - _Example: Booking an available room for the user.
+
+</v-clicks>
 
 ---
-layout: image-right
-image: ./images/what-are-ai-agents.png
+layout: two-cols
 ---
 
 # Defining AI Agents
@@ -116,43 +118,39 @@ image: ./images/what-are-ai-agents.png
 
 This diagram illustrates the core components of an AI Agent system: the agent interacting with its environment through sensors and actuators.
 
-<!-- Original image caption: "What Are AI Agents?" -->
+::right::
 
----
+<v-switch>
 
-# Defining AI Agents
-## Breaking it Down (Continued)
+  <template #1>
+    <img src="./images/what-are-ai-agents.png" alt="What are AI Agents?" />
+  </template>
 
-<v-clicks>
+  <template #2>
 
-- **Large Language Models (LLMs)**
-  - Agents existed before LLMs.
-  - LLMs bring the ability to interpret human language and data.
-  - This enables LLMs to interpret environmental information and define a plan.
+  - **Large Language Models (LLMs)**
+    - Agents existed before LLMs.
+    - LLMs bring the ability to interpret human language and data.
+    - This enables LLMs to interpret environmental information and define a plan.
+  - **Perform Actions**
+    - Outside AI Agent systems, LLMs primarily generate content.
+    - Inside AI Agent systems, LLMs can accomplish tasks by interpreting requests and using tools.
+    
+  </template>
+  
+  <template #3>
 
-- **Perform Actions**
-  - Outside AI Agent systems, LLMs primarily generate content.
-  - Inside AI Agent systems, LLMs can accomplish tasks by interpreting requests and using tools.
+  - **Access To Tools**
+    - Defined by the environment and the AI Agent developer.
+    - _Example: Travel agent's tools limited by booking system operations or restricted to flights only._
+  - **Memory + Knowledge**
+    - **Short-term:** Context of the user-agent conversation.
+    - **Long-term:** Information from environment, other systems, services, tools, or other agents.
+    - _Example: User's travel preferences from a customer database._
 
-</v-clicks>
+  </template>
 
----
-
-# Defining AI Agents
-## Breaking it Down (Concluded)
-
-<v-clicks>
-
-- **Access To Tools**
-  - Defined by the environment and the AI Agent developer.
-  - _Example: Travel agent's tools limited by booking system operations or restricted to flights only._
-
-- **Memory + Knowledge**
-  - **Short-term:** Context of the user-agent conversation.
-  - **Long-term:** Information from environment, other systems, services, tools, or other agents.
-  - _Example: User's travel preferences from a customer database._
-
-</v-clicks>
+</v-switch>
 
 ---
 layout: default
@@ -204,41 +202,34 @@ The following slides will detail different agent types.
 | **Multi-Agent Systems (MAS)** | Agents complete tasks independently, either cooperatively or competitively. | **Cooperative:** Multiple agents book specific services (hotels, flights, entertainment). <br/> **Competitive:** Agents manage and compete over a shared hotel booking calendar. |
 
 ---
-layout: image-left
-image: ./images/when-to-use-ai-agents.png
+layout: two-cols
 ---
 
 # When to Use AI Agents
 
 Let's look at the types of use cases that AI Agents are best used for:
 
+::right::
+
 <v-clicks>
 
-- **Open-Ended Problems**
-  - Allowing the LLM to determine needed steps to complete a task because it can't always be hardcoded into a workflow.
-- **Multi-Step Processes**
-  - Tasks that require a level of complexity in which the AI Agent needs to use tools or information over multiple turns instead of single shot retrieval.
-- **Improvement Over Time**
-  - Tasks where the agent can improve over time by receiving feedback from either its environment or users in order to provide better utility.
-
+  - **Open-Ended Problems**: Allowing the LLM to determine needed steps to complete a task because it can't always be hardcoded into a workflow.
+  - **Multi-Step Processes**: Tasks that require a level of complexity in which the AI Agent needs to use tools or information over multiple turns instead of single shot retrieval.
+  - **Improvement Over Time**: Tasks where the agent can improve over time by receiving feedback from either its environment or users in order to provide better utility.
+  - We cover more considerations of using AI Agents in the **Building Trustworthy AI Agents** lesson. Stay tuned for more on ensuring your AI agents are reliable and ethical!
+  
 </v-clicks>
 
 ---
-
-# When to Use AI Agents (Continued)
-
-We cover more considerations of using AI Agents in the **Building Trustworthy AI Agents** lesson.
-
-Stay tuned for more on ensuring your AI agents are reliable and ethical!
-
----
-layout: default
+layout: section
 ---
 
 # Basics of Agentic Solutions
 
 Understanding the foundational elements for building effective AI agents.
 
+---
+layout: default
 ---
 
 # Basics of Agentic Solutions
