@@ -81,7 +81,7 @@ layout: two-cols
 
 ::right::
 
-<img src="./images/multi-agent-collaboration.png" alt="Multi-Agent Collaboration" class="rounded-lg shadow-lg" style="max-height: 400px; margin: auto;"/>
+<img src="./images/multi-agent-group-chat.png" alt="Multi-Agent Collaboration" class="rounded-lg shadow-lg" style="max-height: 400px; margin: auto;"/>
 <p class="text-xs text-center mt-2">Conceptual representation of agents collaborating.</p>
 
 ---
@@ -298,7 +298,7 @@ layout: default
 </v-clicks>
 
 ---
-layout: outro
+layout: end
 ---
 
 # Next Steps
