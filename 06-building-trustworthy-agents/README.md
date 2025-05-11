@@ -377,7 +377,7 @@ layout: default
 </v-clicks>
 
 ---
-layout: outro
+layout: end
 ---
 
 # Congratulations!

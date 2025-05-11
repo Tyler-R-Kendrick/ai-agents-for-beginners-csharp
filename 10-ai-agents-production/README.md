@@ -141,7 +141,7 @@ Strategies to manage AI Agent deployment costs:
 </v-clicks>
 
 ---
-layout: outro
+layout: end
 ---
 
 # Congratulations!

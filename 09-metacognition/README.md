@@ -515,7 +515,7 @@ AI agents that use generative models to **write and execute code**.
 *(The README contains a more detailed conceptual example for a Travel Agent that generates code.)*
 
 ---
-layout: outro
+layout: end
 ---
 
 # Next Steps

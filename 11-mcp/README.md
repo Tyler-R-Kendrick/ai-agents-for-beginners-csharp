@@ -48,7 +48,7 @@ layout: intro
 [Return to Main Course Page](https://github.com/microsoft/ai-agents-for-beginners)
 
 ---
-layout: outro
+layout: end
 ---
 
 # Stay Tuned!
