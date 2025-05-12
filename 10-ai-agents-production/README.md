@@ -26,125 +26,7 @@ Learn how to plan, deploy, and manage AI agents in a production environment.
 layout: default
 ---
 
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-layout: default
----
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-layout: default
--
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-layout: default
-
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-layout: default
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-layout: defa
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-layout: 
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-layout:
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-layou
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-l
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
-
----
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 10: AI Agents in Production</span>
-<p class="text-2xl text-white mt-4">Learn how to plan, deploy, and manage AI agents in a production environment.</p>
-<a href="https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
+<Youtube id="l4TP6IyJxmQ" class="absolute inset-0 w-full h-full" />
 
 ---
 layout: intro
@@ -176,7 +58,10 @@ After this lesson, you will understand:
 
 </v-clicks>
 
+<v-click>
+
 **Important Note:** Always aim to deploy trustworthy AI Agents. Refer to the "Building Trustworthy AI Agents" lesson for more details.
+</v-click>
 
 ---
 layout: section
@@ -204,7 +89,10 @@ Evaluate not just the agent's output, but the **entire system**, including:
 
 </v-clicks>
 
+<v-click>
+
 This modular evaluation helps identify improvement areas and monitor the effect of changes efficiently.
+</v-click>
 
 ---
 layout: section
@@ -215,6 +103,12 @@ layout: section
 ---
 layout: default
 ---
+
+<style>
+body, ul, li, table, tr, th, td, .text-sm {
+  font-size: .95em;
+}
+</style>
 
 ## Common Issues & Potential Solutions
 
@@ -273,7 +167,7 @@ This is currently the final lesson of "AI Agents for Beginners."
 </v-clicks>
 
 ---
-layout: default
+layout: section
 ---
 
 ## Previous Lesson
