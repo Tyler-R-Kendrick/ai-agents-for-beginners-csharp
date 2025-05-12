@@ -13,27 +13,18 @@ exportFilename: '03-agentic-design-principles-slides'
 info: |
   ## AI Agentic Design Principles
   This lesson explores human-centric UX Design Principles for building customer-centric agentic systems.
----
-<!--
-Original filepath: /workspaces/ai-agents-for-beginners-csharp/03-agentic-design-patterns/README.md
-Slidev conversion starts here.
--->
-
----
 layout: cover
 background: ./images/lesson-3-thumbnail.png
-class: text-center
 ---
 
 # AI Agentic Design Principles
 ## AI Agents for Beginners - Lesson 3
 
-<div class="abs-br m-6 flex gap-2">
-  <a href="https://youtu.be/m9lM8qqoOEA?si=4KimounNKvArQQ0K" target="_blank" alt="View video of this lesson"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-video />
-  </a>
-</div>
+---
+layout: default
+---
+
+<Youtube id="m9lM8qqoOEA" class="absolute inset-0 w-full h-full" />
 
 > _(Click the video icon above to view video of this lesson)_
 
@@ -91,8 +82,7 @@ After completing this lesson, you will be able to:
 </v-clicks>
 
 ---
-layout: image-right
-image: ./images/agentic-design-principles.png
+layout: two-cols
 ---
 
 # The Agentic Design Principles
@@ -103,6 +93,10 @@ We'll break these down into:
 - Agent (Space)
 - Agent (Time)
 - Agent (Core)
+
+::right::
+
+![agentic design](./images/agentic-design-principles.png)
 
 ---
 layout: default
@@ -127,31 +121,45 @@ This is the environment in which the agent operates. These principles inform how
 </v-clicks>
 
 ---
-layout: default
----
 
 # Agent (Time)
 
 This is how the agent operates over time. These principles inform how we design agents interacting across the past, present, and future.
 
-<v-clicks>
 
-- **Past**: Reflecting on history that includes both state and context.
-  - Agent provides more relevant results based on analysis of richer historical data beyond only the event, people, or states.
-  - Agent creates connections from past events and actively reflects on memory to engage with current situations.
-- **Now**: Nudging more than notifying.
-  - Agent embodies a comprehensive approach to interacting with people. When an event happens, the Agent goes beyond static notification or other static formality. Agent can simplify flows or dynamically generate cues to direct the user’s attention at the right moment.
-  - Agent delivers information based on contextual environment, social and cultural changes and tailored to user intent.
-  - Agent interaction can be gradual, evolving/growing in complexity to empower users over the long term.
-- **Future**: Adapting and evolving.
-  - Agent adapts to various devices, platforms, and modalities.
-  - Agent adapts to user behavior, accessibility needs, and is freely customizable.
-  - Agent is shaped by and evolves through continuous user interaction.
+<v-switch>
 
-</v-clicks>
+<template #1>
 
----
-layout: default
+## Past
+### Reflecting on history that includes both state and context.
+
+- Agent provides more relevant results based on analysis of richer historical data beyond only the event, people, or states.
+- Agent creates connections from past events and actively reflects on memory to engage with current situations.
+</template>
+
+<template #2>
+
+## Now
+### Nudging more than notifying.
+
+- Agent embodies a comprehensive approach to interacting with people. When an event happens, the Agent goes beyond static notification or other static formality. Agent can simplify flows or dynamically generate cues to direct the user’s attention at the right moment.
+- Agent delivers information based on contextual environment, social and cultural changes and tailored to user intent.
+- Agent interaction can be gradual, evolving/growing in complexity to empower users over the long term.
+</template>
+
+<template #3>
+
+## Future
+### Adapting and evolving.
+
+- Agent adapts to various devices, platforms, and modalities.
+- Agent adapts to user behavior, accessibility needs, and is freely customizable.
+- Agent is shaped by and evolves through continuous user interaction.
+</template>
+
+</v-switch>
+
 ---
 
 # Agent (Core)
@@ -163,8 +171,6 @@ These are the key elements in the core of an agent’s design.
   - Trust and transparency are foundational layers of Agent design.
   - Humans are in control of when the Agent is on/off and Agent status is clearly visible at all times.
 
----
-layout: default
 ---
 
 # Guidelines to Implement These Principles
@@ -180,7 +186,7 @@ When you’re using the previous design principles, use the following guidelines
 </v-clicks>
 
 ---
-layout: default
+layout: two-cols
 ---
 
 # How To Design a Travel Agent
@@ -188,13 +194,25 @@ layout: default
 
 Imagine you are designing a Travel Agent, here is how you could think about using the Design Principles and Guidelines:
 
-<v-clicks>
+::right::
 
-1.  **Transparency** – Let the user know that the Travel Agent is an AI-enabled Agent. Provide some basic instructions on how to get started (e.g., a “Hello” message, sample prompts). Clearly document this on the product page. Show the list of prompts a user has asked in the past. Make it clear how to give feedback (thumbs up and down, Send Feedback button, etc.). Clearly articulate if the Agent has usage or topic restrictions.
-2.  **Control** – Make sure it’s clear how the user can modify the Agent after it’s been created with things like the System Prompt. Enable the user to choose how verbose the Agent is, its writing style, and any caveats on what the Agent should not talk about. Allow the user to view and delete any associated files or data, prompts, and past conversations.
-3.  **Consistency** – Make sure the icons for Share Prompt, add a file or photo and tag someone or something are standard and recognizable. Use the paperclip icon to indicate file upload/sharing with the Agent, and an image icon to indicate graphics upload.
+<v-switch>
 
-</v-clicks>
+<template #1>
+
+**Transparency** – Let the user know that the Travel Agent is an AI-enabled Agent. Provide some basic instructions on how to get started (e.g., a “Hello” message, sample prompts). Clearly document this on the product page. Show the list of prompts a user has asked in the past. Make it clear how to give feedback (thumbs up and down, Send Feedback button, etc.). Clearly articulate if the Agent has usage or topic restrictions.
+</template>
+
+<template #2>
+
+**Control** – Make sure it’s clear how the user can modify the Agent after it’s been created with things like the System Prompt. Enable the user to choose how verbose the Agent is, its writing style, and any caveats on what the Agent should not talk about. Allow the user to view and delete any associated files or data, prompts, and past conversations.
+</template>
+
+<template #3>
+
+**Consistency** – Make sure the icons for Share Prompt, add a file or photo and tag someone or something are standard and recognizable. Use the paperclip icon to indicate file upload/sharing with the Agent, and an image icon to indicate graphics upload.
+</template>
+</v-switch>
 
 ---
 layout: default
@@ -202,13 +220,9 @@ layout: default
 
 # Additional Resources
 
-<v-clicks>
-
 - <a href="https://openai.com" target="_blank">Practices for Governing Agentic AI Systems | OpenAI</a>
 - <a href="https://microsoft.com" target="_blank">The HAX Toolkit Project - Microsoft Research</a>
 - <a href="https://responsibleaitoolbox.ai" target="_blank">Responsible AI Toolbox</a>
-
-</v-clicks>
 
 ---
 layout: section
@@ -219,7 +233,7 @@ layout: section
 Review and Next Steps
 
 ---
-layout: default
+layout: end
 ---
 
 # Navigation
