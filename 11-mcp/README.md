@@ -14,20 +14,15 @@ info: |
   ## AI Agents for Beginners
   Lesson 11: Model Context Protocol (MCP)
   An introduction to MCP (Lesson in Progress).
+background: ../images/repo-thumbnail.png
+
 ---
 
-<!-- Original filepath: /workspaces/ai-agents-for-beginners-csharp/11-mcp/README.md -->
-<!-- Slidev conversion starts here. -->
+## AI Agents for Beginners
+Lesson 11: Model Context Protocol (MCP)
+An introduction to MCP (Lesson in Progress).
 
-<div class="absolute left-0 right-0 top-0 z-0">
-<img src="../images/repo-thumbnail.png" class="w-full h-full object-cover"/>
-</div>
-
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 11: Model Context Protocol (MCP)</span>
-<p class="text-2xl text-white mt-4">An introduction to MCP.</p>
 <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
 
 ---
 layout: intro
@@ -64,5 +59,3 @@ class: end
 ---
 
 ## Thank You!
-
-<!-- This is the end of the Slidev presentation for Lesson 11 -->
