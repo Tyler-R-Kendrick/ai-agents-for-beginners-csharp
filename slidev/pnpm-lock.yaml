@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@mdi/font':
+        specifier: ^7.4.47
+        version: 7.4.47
+      '@mdi/js':
+        specifier: ^7.4.47
+        version: 7.4.47
       '@slidev/cli':
         specifier: ^51.6.0
         version: 51.6.0(@babel/parser@7.27.2)(@nuxt/kit@3.17.2)(@types/markdown-it@14.1.2)(@types/node@18.19.100)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)
@@ -17,9 +23,22 @@ importers:
       '@slidev/theme-seriph':
         specifier: latest
         version: 0.25.0
+      mdi-vue3:
+        specifier: ^7.4.47
+        version: 7.4.47(vue@3.5.13(typescript@5.8.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.8.3)
+      vue-material-design-icons:
+        specifier: ^5.3.1
+        version: 5.3.1
+    devDependencies:
+      '@iconify-json/mdi':
+        specifier: ^1.2.3
+        version: 1.2.3
+      unplugin-icons:
+        specifier: ^22.1.0
+        version: 22.1.0(@vue/compiler-sfc@3.5.13)
 
 packages:
 
@@ -336,6 +355,9 @@ packages:
   '@iconify-json/carbon@1.2.8':
     resolution: {integrity: sha512-6xh4YiFBz6qoSnB3XMe23WvjTJroDFXB17J1MbiT7nATFe+70+em1acRXr8hgP/gYpwFMHFc4IvjA/IPTPnTzg==}
 
+  '@iconify-json/mdi@1.2.3':
+    resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
+
   '@iconify-json/ph@1.2.2':
     resolution: {integrity: sha512-PgkEZNtqa8hBGjHXQa4pMwZa93hmfu8FUSjs/nv4oUU6yLsgv+gh9nu28Kqi8Fz9CCVu4hj1MZs9/60J57IzFw==}
 
@@ -374,6 +396,12 @@ packages:
 
   '@lillallol/outline-pdf@4.0.0':
     resolution: {integrity: sha512-tILGNyOdI3ukZfU19TNTDVoS0W1nSPlMxCKAm9FPV4OPL786Ur7e1CRLQZWKJP6uaMQsUqSDBCTzISs6lXWdAQ==}
+
+  '@mdi/font@7.4.47':
+    resolution: {integrity: sha512-43MtGpd585SNzHZPcYowu/84Vz2a2g31TvPMTm9uTiCSWzaheQySUcSyUH/46fPnuPQWof2yd0pGBtzee/IQWw==}
+
+  '@mdi/js@7.4.47':
+    resolution: {integrity: sha512-KPnNOtm5i2pMabqZxpUz7iQf+mfrYZyKCZ8QNz85czgEt7cuHcGorWfdzUMWYA0SD+a6Hn4FmJ+YhzzzjkTZrQ==}
 
   '@mdit-vue/plugin-component@2.1.4':
     resolution: {integrity: sha512-fiLbwcaE6gZE4c8Mkdkc4X38ltXh/EdnuPE1hepFT2dLiW6I4X8ho2Wq7nhYuT8RmV4OKlCFENwCuXlKcpV/sw==}
@@ -1858,6 +1886,11 @@ packages:
   mdast-util-to-string@4.0.0:
     resolution: {integrity: sha512-0H44vDimn51F0YwvxSJSm0eCDOJTRlmN0R1yBh4HLj9wiV1Dn0QoXGbvFAWj2hSItVTlCmBF1hqKlIyUBVFLPg==}
 
+  mdi-vue3@7.4.47:
+    resolution: {integrity: sha512-zUOqx/1TaPBCQMQvz8vcFyxSiRJzrbmfvLiute5PAoAKnNDkc7l2JuXE9K/CcU4CScTkttWmhWSnhMVcUi0KVA==}
+    peerDependencies:
+      vue: '>= 3'
+
   mdn-data@2.12.2:
     resolution: {integrity: sha512-IEn+pegP1aManZuckezWCO+XZQDplx1366JoVhTpMpBB1sPey/SbveZQUosKiKiGYjg1wH4pMlNgXbCiYgihQA==}
 
@@ -2608,6 +2641,9 @@ packages:
     peerDependencies:
       vue: ^3.4.37
 
+  vue-material-design-icons@5.3.1:
+    resolution: {integrity: sha512-6UNEyhlTzlCeT8ZeX5WbpUGFTTPSbOoTQeoASTv7X4Ylh0pe8vltj+36VMK56KM0gG8EQVoMK/Qw/6evalg8lA==}
+
   vue-resize@2.0.0-alpha.1:
     resolution: {integrity: sha512-7+iqOueLU7uc9NrMfrzbG8hwMqchfVfSzpVlCMeJQe4pyibqyoifDNbKTZvwxZKDvGkB+PdFeKvnGZMoEb8esg==}
     peerDependencies:
@@ -2954,6 +2990,10 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/ph@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
@@ -3002,6 +3042,10 @@ snapshots:
     dependencies:
       '@lillallol/outline-pdf-data-structure': 1.0.3
       pdf-lib: 1.17.1
+
+  '@mdi/font@7.4.47': {}
+
+  '@mdi/js@7.4.47': {}
 
   '@mdit-vue/plugin-component@2.1.4':
     dependencies:
@@ -4922,6 +4966,10 @@ snapshots:
     dependencies:
       '@types/mdast': 4.0.4
 
+  mdi-vue3@7.4.47(vue@3.5.13(typescript@5.8.3)):
+    dependencies:
+      vue: 3.5.13(typescript@5.8.3)
+
   mdn-data@2.12.2: {}
 
   mdurl@2.0.0: {}
@@ -5798,6 +5846,8 @@ snapshots:
   vue-flow-layout@0.1.1(vue@3.5.13(typescript@5.8.3)):
     dependencies:
       vue: 3.5.13(typescript@5.8.3)
+
+  vue-material-design-icons@5.3.1: {}
 
   vue-resize@2.0.0-alpha.1(vue@3.5.13(typescript@5.8.3)):
     dependencies:

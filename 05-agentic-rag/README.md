@@ -13,27 +13,18 @@ exportFilename: '05-agentic-rag-slides'
 info: |
   ## Agentic RAG
   This lesson explores Agentic Retrieval-Augmented Generation (Agentic RAG), where LLMs autonomously plan and retrieve information.
----
-<!--
-Original filepath: /workspaces/ai-agents-for-beginners-csharp/05-agentic-rag/README.md
-Slidev conversion starts here.
--->
-
----
 layout: cover
 background: ./images/lesson-5-thumbnail.png
-class: text-center
 ---
 
 # Agentic RAG
 ## AI Agents for Beginners - Lesson 5
 
-<div class="abs-br m-6 flex gap-2">
-  <a href="https://youtu.be/WcjAARvdL7I?si=BCgwjwFb2yCkEhR9" target="_blank" alt="View video of this lesson"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-video />
-  </a>
-</div>
+---
+layout: default
+---
+
+<Youtube id="WcjAARvdL7I" class="absolute inset-0 w-full h-full" />
 
 > _(Click the video icon above to view video of this lesson)_
 
@@ -69,7 +60,7 @@ This lesson will cover:
 
 After completing this lesson, you will understand:
 
-<v-clicks>
+<v-clicks text-sm>
 
 - **Agentic RAG Definition:** The paradigm of LLMs autonomously planning and retrieving external data.
 - **Iterative Maker-Checker Style:** The loop of LLM calls, tool use, and structured outputs for correctness.
@@ -103,13 +94,14 @@ layout: default
 ---
 layout: image-right
 image: ./images/agentic-rag-core-loop.png
+backgroundSize: "95%"
 ---
 
 # Defining Agentic RAG
 
 Agentic RAG involves a loop of iterative calls to the LLM, tool/function calls, and structured outputs.
 
-<v-clicks>
+<v-clicks text-sm>
 
 - **Autonomous Planning:** LLMs plan their next steps, not just follow scripts.
 - **Iterative Refinement:** The system evaluates results, refines queries, and invokes tools until satisfied.
@@ -118,8 +110,6 @@ Agentic RAG involves a loop of iterative calls to the LLM, tool/function calls, 
 - **Simplified Orchestration:** A simple loop (`LLM call -> tool use -> LLM call -> ...`) can yield sophisticated outputs.
 
 </v-clicks>
-
-This diagram illustrates the core loop of Agentic RAG.
 
 ---
 layout: default
@@ -136,55 +126,76 @@ The distinguishing quality of an “agentic” system is its ability to **own it
 
 </v-clicks>
 
+<v-click>
+
 **Example: Product Launch Strategy**
+
 An agentic model might independently decide to:
+</v-click>
+
+<v-clicks>
+
 1.  Retrieve current market trend reports (e.g., Bing Web Grounding).
-2.  Identify relevant competitor data (e.g., Azure AI Search).
-3.  Correlate historical internal sales metrics (e.g., Azure SQL Database).
-4.  Synthesize findings into a strategy (e.g., orchestrated via Azure OpenAI Service).
-5.  Evaluate the strategy for gaps, prompting more retrieval if needed.
+1.  Identify relevant competitor data (e.g., Azure AI Search).
+1.  Correlate historical internal sales metrics (e.g., Azure SQL Database).
+1.  Synthesize findings into a strategy (e.g., orchestrated via Azure OpenAI Service).
+1.  Evaluate the strategy for gaps, prompting more retrieval if needed.
+
+</v-clicks>
+
+<v-click>
 
 All these steps are decided by the model, not pre-scripted.
+</v-click>
 
 ---
 layout: image-right
 image: ./images/tool-integration.png
+backgroundSize: '95%'
 ---
 
 # Iterative Loops, Tool Integration, and Memory
 
+This creates an evolving understanding, enabling complex, multi-step task navigation without constant human intervention.
+
 An agentic system relies on a looped interaction pattern:
 
-<v-clicks>
+<v-switch text-sm>
+
+<template #1>
 
 - **Initial Call:** User’s goal (prompt) is presented to the LLM.
 - **Tool Invocation:** If information is missing or instructions are ambiguous, the model selects a tool/retrieval method (e.g., vector DB query, SQL call).
 - **Assessment & Refinement:** Model reviews returned data and decides if it suffices. If not, it refines the query, tries a different tool, or adjusts its approach.
+
+</template>
+
+<template #2>
+
 - **Repeat Until Satisfied:** Cycle continues until the model has enough clarity and evidence.
 - **Memory & State:** Maintains state and memory across steps, recalling previous attempts and outcomes to avoid repetitive loops and make informed decisions.
 
-</v-clicks>
+</template>
 
-This creates an evolving understanding, enabling complex, multi-step task navigation without constant human intervention.
+</v-switch>
 
 ---
 layout: image-right
 image: ./images/self-correction.png
+backgroundSize: '95%'
 ---
 
 # Handling Failure Modes and Self-Correction
 
-Agentic RAG’s autonomy includes robust self-correction mechanisms. When encountering dead ends (irrelevant documents, malformed queries):
+This iterative and dynamic approach allows continuous improvement during a session. Agentic RAG’s autonomy includes robust self-correction mechanisms. When encountering dead ends:
 
-<v-clicks>
+<v-clicks text-sm>
 
 - **Iterate and Re-Query:** Attempts new search strategies, rewrites database queries, or looks at alternative data sets instead of returning low-value responses.
 - **Use Diagnostic Tools:** May invoke additional functions to debug reasoning or confirm data correctness (e.g., Azure AI Tracing for observability).
 - **Fallback on Human Oversight:** For high-stakes or repeatedly failing scenarios, it might flag uncertainty and request human guidance. Incorporated feedback can improve future performance.
 
 </v-clicks>
-
-This iterative and dynamic approach allows continuous improvement during a session.
 
 ---
 layout: default
@@ -217,17 +228,15 @@ Agentic RAG shines in scenarios requiring iterative refinement and precision:
 1.  **Correctness-First Environments:**
     *   In compliance checks, regulatory analysis, or legal research.
     *   Agent can repeatedly verify facts, consult multiple sources, and rewrite queries for a vetted answer.
-2.  **Complex Database Interactions:**
+1.  **Complex Database Interactions:**
     *   When dealing with structured data where queries might fail or need adjustment.
     *   System can autonomously refine queries (e.g., using Azure SQL or Microsoft Fabric OneLake).
-3.  **Extended Workflows:**
+1.  **Extended Workflows:**
     *   Longer-running sessions might evolve as new information surfaces.
     *   Agentic RAG can continuously incorporate new data, shifting strategies as it learns.
 
 </v-clicks>
 
----
-layout: two-cols
 ---
 
 # Governance, Transparency, and Trust
@@ -247,15 +256,25 @@ As systems become more autonomous, governance and transparency are crucial:
 
 </v-clicks>
 
-::right::
+---
 
 Clear records of actions are vital for debugging multi-step processes.
 
 **Example from Literal AI (Chainlit): Agent Run**
+<v-switch>
+
+<template #1>
 
 ![AgentRunExample](./images/AgentRunExample.png)
 
+</template>
+
+<template #2>
+
 ![AgentRunExample2](./images/AgentRunExample2.png)
+
+</template>
+</v-switch>
 
 ---
 layout: default
@@ -278,8 +297,6 @@ layout: default
 
 # Additional Resources
 
-<v-clicks>
-
 - <a href="https://learn.microsoft.com/training/modules/use-own-data-azure-openai" target="_blank">Implement RAG with Azure OpenAI Service (MS Learn)</a>
 - <a href="https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai" target="_blank">Evaluation of generative AI with Azure AI Foundry (MS Learn)</a>
 - <a href="https://weaviate.io/blog/what-is-agentic-rag" target="_blank">What is Agentic RAG | Weaviate</a>
@@ -290,25 +307,19 @@ layout: default
 - <a href="https://www.youtube.com/watch?v=AOSjiXP1jmQ" target="_blank">How to Build Agentic RAG Systems (Video)</a>
 - <a href="https://ignite.microsoft.com/sessions/BRK102?source=sessions" target="_blank">Using Azure AI Foundry Agent Service to scale AI agents (Ignite Session)</a>
 
-</v-clicks>
-
 ---
 layout: default
 ---
 
 # Academic Papers
 
-<v-clicks>
-
 - <a href="https://arxiv.org/abs/2303.17651" target="_blank">Self-Refine: Iterative Refinement with Self-Feedback (2303.17651)</a>
 - <a href="https://arxiv.org/abs/2303.11366" target="_blank">Reflexion: Language Agents with Verbal Reinforcement Learning (2303.11366)</a>
 - <a href="https://arxiv.org/abs/2305.11738" target="_blank">CRITIC: LLMs Can Self-Correct with Tool-Interactive Critiquing (2305.11738)</a>
 - <a href="https://arxiv.org/abs/2501.09136" target="_blank">Agentic Retrieval-Augmented Generation: A Survey (2501.09136)</a>
 
-</v-clicks>
-
 ---
-layout: section
+layout: end
 ---
 
 # End of Lesson 5
@@ -316,7 +327,7 @@ layout: section
 Review and Next Steps
 
 ---
-layout: default
+layout: end
 ---
 
 # Navigation

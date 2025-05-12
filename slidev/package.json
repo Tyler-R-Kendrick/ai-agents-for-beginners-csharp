@@ -8,9 +8,17 @@
     "export": "slidev export"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@mdi/js": "^7.4.47",
     "@slidev/cli": "^51.6.0",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
-    "vue": "^3.5.13"
+    "mdi-vue3": "^7.4.47",
+    "vue": "^3.5.13",
+    "vue-material-design-icons": "^5.3.1"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.2.3",
+    "unplugin-icons": "^22.1.0"
   }
 }
