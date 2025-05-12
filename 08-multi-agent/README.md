@@ -10,26 +10,22 @@ drawings:
   persist: false
 download: true
 exportFilename: 08-multi-agent-slides
+layout: cover
 info: |
   ## AI Agents for Beginners
   Lesson 8: Multi-Agent Systems
   Learn about creating systems with multiple AI agents that can collaborate or delegate tasks.
 ---
 
-<!-- Original filepath: /workspaces/ai-agents-for-beginners-csharp/08-multi-agent/README.md -->
-<!-- Slidev conversion starts here. -->
+## AI Agents for Beginners
+Lesson 8: Multi-Agent Systems
+Learn about creating systems with multiple AI agents that can collaborate or delegate tasks.
 
-<div class="absolute left-0 right-0 top-0 z-0">
-<img src="./images/lesson-8-thumbnail.png" class="w-full h-full object-cover"/>
-</div>
+---
+layout: default
+---
 
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 8: Multi-Agent Systems</span>
-<p class="text-2xl text-white mt-4">Learn about creating systems with multiple AI agents that can collaborate or delegate tasks.</p>
-<a href="https://aka.ms/ai-agents-for-beginners/watch/08" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
+<Youtube id="V6HpE9hZEx0" class="absolute inset-0 w-full h-full" />
 
 ---
 layout: intro
@@ -61,7 +57,10 @@ A Multi-Agent System (MAS) is a system composed of multiple interacting intellig
 
 </v-clicks>
 
+<v-click>
+
 In this lesson, we'll focus on cooperative multi-agent systems.
+</v-click>
 
 ---
 layout: two-cols
@@ -128,8 +127,7 @@ There are several common architectures for multi-agent systems:
 </v-clicks>
 
 ---
-layout: image-right
-image: ./images/hierarchical-architecture.png
+layout: default
 ---
 
 ## Hierarchical Architecture
@@ -145,16 +143,21 @@ In a hierarchical architecture:
 
 </v-clicks>
 
+<v-clicks>
+
 **Pros:** Clear control flow, easier to manage.
+
 **Cons:** Single point of failure at higher levels, can be less flexible.
 
-*(Image: A diagram showing a manager agent connected to several worker agents below it.)*
+</v-clicks>
 
 ---
 layout: default
 ---
 
 ## Example: Travel Planning Multi-Agent System
+
+This system could use a hierarchical or blackboard architecture.
 
 Let's consider a travel planning system with multiple agents:
 
@@ -167,8 +170,6 @@ Let's consider a travel planning system with multiple agents:
 - **Coordinator Agent:** Receives user request from UI agent, delegates tasks to specialized agents, and aggregates results.
 
 </v-clicks>
-
-This system could use a hierarchical or blackboard architecture.
 
 ---
 layout: section
@@ -192,7 +193,11 @@ Semantic Kernel can be used to build individual agents, and then you can orchest
 
 </v-clicks>
 
+<v-click>
+
 Let's look at a simplified example.
+
+</v-click>
 
 ---
 layout: default
@@ -203,7 +208,7 @@ layout: default
 **Goal:** Research a topic and provide a summary.
 
 **Agents:**
-<v-clicks>
+<v-clicks text-sm>
 
 1.  **Research Agent:**
     *   Skill: Search the web for information on a given topic.
@@ -242,17 +247,17 @@ public class Orchestrator
     public Orchestrator()
     {
         // Initialize agents (each with their own Kernel, plugins, etc.)
-        // this.researchAgent = new ResearchAgent(...);
-        // this.summarizationAgent = new SummarizationAgent(...);
+        this.researchAgent = new ResearchAgent(...);
+        this.summarizationAgent = new SummarizationAgent(...);
     }
 
     public async Task<string> ResearchAndSummarizeTopic(string topic)
     {
         // 1. Research Agent gathers information
-        // var researchResults = await this.researchAgent.Search(topic);
+        //var researchResults = await this.researchAgent.Search(topic);
 
         // 2. Summarization Agent processes the results
-        // var summary = await this.summarizationAgent.Summarize(researchResults);
+        //var summary = await this.summarizationAgent.Summarize(researchResults);
         
         // return summary;
         Console.WriteLine($"Orchestrator: Researching and summarizing '{topic}'.");
@@ -271,10 +276,10 @@ public class Orchestrator
 }
 
 // To run this:
-// var orchestrator = new Orchestrator();
-// string topic = "the future of AI";
-// string summary = await orchestrator.ResearchAndSummarizeTopic(topic);
-// Console.WriteLine($"
+var orchestrator = new Orchestrator();
+string topic = "the future of AI";
+string summary = await orchestrator.ResearchAndSummarizeTopic(topic);
+Console.WriteLine($"
 Final Summary for '{topic}':
 {summary}");
 ```
@@ -313,11 +318,13 @@ Congratulations on completing Lesson 8!
 
 </v-clicks>
 
+<v-click>
 In the next lesson, we'll dive into **Metacognition and Self-Correction in AI Agents**.
 
 [Proceed to Lesson 9: Metacognition](../09-metacognition/README.md)
 
 [Return to Main Course Page](https://github.com/microsoft/ai-agents-for-beginners)
+</v-click>
 
 ---
 class: end
