@@ -14,22 +14,19 @@ info: |
   ## AI Agents for Beginners
   Lesson 9: Metacognition and Self-Correction
   Learn how AI agents can think about their own thinking processes and self-correct.
+layout: cover
+background: ./images/lesson-9-thumbnail.png
 ---
 
-<!-- Original filepath: /workspaces/ai-agents-for-beginners-csharp/09-metacognition/README.md -->
-<!-- Slidev conversion starts here. -->
+# AI Agents for Beginners
+Lesson 9: Metacognition and Self-Correction
+Learn how AI agents can think about their own thinking processes and self-correct.
 
-<div class="absolute left-0 right-0 top-0 z-0">
-<img src="./images/lesson-9-thumbnail.png" class="w-full h-full object-cover"/>
-</div>
+---
+layout: default
+---
 
-<div class="absolute bottom-20 left-15 right-15">
-<span class="font-bold text-5xl text-white">Lesson 9: Metacognition & Self-Correction</span>
-<p class="text-2xl text-white mt-4">Learn how AI agents can think about their own thinking processes and self-correct.</p>
-<a href="https://youtu.be/His9R6gw6Ec?si=3_RMb8VprNvdLRhX" target="_blank" class="text-lg text-white underline">Watch the video lesson</a>
-<br/>
-<a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" class="text-lg text-white underline">Return to Main Course Page</a>
-</div>
+<Youtube id="His9R6gw6Ec" class="absolute inset-0 w-full h-full" />
 
 ---
 layout: intro
@@ -63,16 +60,22 @@ Metacognition is "thinking about thinking." For AI agents, it means:
 
 </v-clicks>
 
+<v-click>
+
 **Example:** An agent might think, "I prioritized cheaper flights, but I might be missing direct ones. Let me re-check."
 
 This self-awareness helps address challenges like transparency, reasoning, adaptation, and perception.
+</v-click>
 
 ---
 layout: image-right
 image: ./images/importance-of-metacognition.png
+backgroundSize: 95%
 ---
 
 ## Importance of Metacognition
+
+*(Image: Diagram showing Self-Reflection, Adaptability, Error Correction, Resource Management as key aspects of Metacognition)*
 
 <v-clicks>
 
@@ -82,8 +85,6 @@ image: ./images/importance-of-metacognition.png
 - **Resource Management:** Optimize time and computational power through planning.
 
 </v-clicks>
-
-*(Image: Diagram showing Self-Reflection, Adaptability, Error Correction, Resource Management as key aspects of Metacognition)*
 
 ---
 layout: default
@@ -100,10 +101,14 @@ An AI agent typically has:
 
 </v-clicks>
 
+<v-click>
+
 These form an "expertise unit" for specific tasks.
 
 **Example: Travel Agent with Metacognition**
 Imagine a travel agent AI that plans your holiday and adjusts based on real-time data and past customer experiences.
+
+</v-click>
 
 ---
 layout: default
@@ -123,8 +128,12 @@ layout: default
 
 </v-clicks>
 
+<v-click>
+
 **Self-Reflection Example:**
 If a user disliked a crowded place (e.g., Eiffel Tower), the agent learns to avoid similar recommendations or suggest off-peak times.
+
+</v-click>
 
 ---
 layout: default
@@ -184,7 +193,7 @@ layout: section
 # Planning in Agents
 
 ---
-layout: default
+layout: two-cols
 ---
 
 ## Planning in Agents
@@ -199,7 +208,13 @@ Planning involves outlining steps to achieve a goal, considering:
 
 </v-clicks>
 
+::right::
+
+<v-click>
+
 **Travel Agent Planning Steps:**
+</v-click>
+
 <v-clicks size="sm">
 
 1.  Gather User Preferences (dates, budget, interests).
@@ -223,11 +238,14 @@ layout: section
 ---
 layout: image-right
 image: ./images/rag-vs-context.png
+backgroundSize: 95%
 ---
 
 ## RAG vs. Pre-emptive Context Load
 
-<v-clicks>
+*(Image: Diagram comparing RAG (retrieve then generate) and Pre-emptive Context Load (load context then generate).)*
+
+<v-clicks text-sm>
 
 - **Retrieval-Augmented Generation (RAG):**
   - Combines a retrieval system with a generative model.
@@ -239,8 +257,6 @@ image: ./images/rag-vs-context.png
   - Model has access to this info from the start.
 
 </v-clicks>
-
-*(Image: Diagram comparing RAG (retrieve then generate) and Pre-emptive Context Load (load context then generate).)*
 
 ---
 layout: default
@@ -259,7 +275,11 @@ Involves:
 
 </v-clicks>
 
+<v-click>
+
 **Example: Corrective RAG in Travel Agent**
+</v-click>
+
 <v-clicks>
 
 - **Initial:** Agent suggests Eiffel Tower.
@@ -347,7 +367,7 @@ class TravelAgent_Preload:
 This allows faster responses for common queries as data is already in memory.
 
 ---
-layout: default
+layout: two-cols
 ---
 
 ## Bootstrapping Plan with a Goal
@@ -364,6 +384,8 @@ Start with a clear objective before iterating.
 3.  **Iterate & Refine:** Improve the plan, optimizing for satisfaction.
 
 </v-clicks>
+
+::right::
 
 ```python
 # Conceptual: Bootstrapping a travel plan
@@ -408,12 +430,15 @@ LLMs can evaluate and re-order retrieved candidates based on relevance and quali
 
 </v-clicks>
 
+<v-click>
+
 This improves the final output presented to the user.
 
 **Example (Conceptual):**
 An LLM could be prompted to review 10 hotel descriptions and rank them based on a user's preference for "quiet, family-friendly, near city center."
 
 *(Refer to the README for a more detailed code example using Azure OpenAI for this.)*
+</v-click>
 
 ---
 layout: two-cols
@@ -460,7 +485,11 @@ Crucial for ensuring agent output is appropriate, accurate, and useful.
 
 </v-clicks>
 
+<v-click>
+
 **Techniques:** Relevance scoring, filtering/ranking, NLP for query understanding, user feedback integration.
+
+</v-click>
 
 ---
 layout: default
@@ -479,7 +508,10 @@ Goes beyond keyword matching to understand the user's underlying goal.
 
 </v-clicks>
 
+<v-click>
+
 Understanding intent + context + personalization leads to more relevant search results.
+</v-click>
 
 ---
 layout: section
@@ -493,6 +525,8 @@ layout: default
 
 ## Code Generating Agents
 
+*(The README contains a more detailed conceptual example for a Travel Agent that generates code.)*
+
 AI agents that use generative models to **write and execute code**.
 
 **Applications:**
@@ -504,15 +538,16 @@ AI agents that use generative models to **write and execute code**.
 
 </v-clicks>
 
+<v-click>
+
 **Example: Data Analysis Agent**
+</v-click>
 <v-clicks>
 
 1.  **Task:** Analyze a dataset for trends.
 2.  **Steps:** Load data, generate SQL/Python for filtering/aggregation, execute, visualize results.
 
 </v-clicks>
-
-*(The README contains a more detailed conceptual example for a Travel Agent that generates code.)*
 
 ---
 layout: end
@@ -530,11 +565,14 @@ Congratulations on completing Lesson 9!
 
 </v-clicks>
 
+<v-click>
+
 In the next lesson, we'll discuss **Putting AI Agents into Production**.
 
 [Proceed to Lesson 10: AI Agents in Production](../10-ai-agents-production/README.md)
 
 [Return to Main Course Page](https://github.com/microsoft/ai-agents-for-beginners)
+</v-click>
 
 ---
 class: end
